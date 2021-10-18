@@ -2,7 +2,7 @@
     <description>Builds, tests, and runs the project CarPartsPriceComparison.</description>
     <import file="nbproject/build-impl.xml"/>
     
-    <target name="-post-compile">
+    <target name="post-compile">
         <copy file="README.md" todir="${dist.dir}"/>        
     </target>
     <!--
