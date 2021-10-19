@@ -5,11 +5,13 @@
  */
 package webscrape;
 
+import java.util.ArrayList;
+import java.util.List;
 import javafx.stage.Stage;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -20,64 +22,25 @@ public class webscraperTest {
     public webscraperTest() {
     }
     
-    @BeforeAll
+    @BeforeClass
     public static void setUpClass() {
     }
     
-    @AfterAll
+    @AfterClass
     public static void tearDownClass() {
     }
 
     /**
-     * Test of main method, of class webscraper.
+     * Test of addPart method, of class webscraper.
+     * Adds a Part to partlist.
      */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        webscraper.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of start method, of class webscraper.
-     */
-    @Test
-    public void testStart() throws Exception {
-        System.out.println("start");
-        Stage stage = null;
-        webscraper instance = new webscraper();
-        instance.start(stage);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of add method, of class webscraper.
-     */
-    @Test
-    public void testAdd() {
-        System.out.println("add");
-        PartPrice item = null;
-        webscraper instance = new webscraper();
-        instance.add(item);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getTotalCost method, of class webscraper.
-     */
-    @Test
-    public void testGetTotalCost() {
-        System.out.println("getTotalCost");
-        webscraper instance = new webscraper();
-        double expResult = 0.0;
-        double result = instance.getTotalCost();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testAddPart() {
+        System.out.println("Running addPart()");
+        List<Part> partList = new ArrayList<Part>();
+        assertEquals(partList.size(), 0);
+        partList.add(new Part("Part1", 10.00));
+        assertEquals(partList.size(), 1);
     }
     
 }

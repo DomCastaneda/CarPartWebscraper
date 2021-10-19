@@ -33,40 +33,42 @@ public class webscraper extends Application{
         
     }
     double cost = 0;
+    List<Part> partList = new ArrayList<Part>();
 
-    private List<PartPrice> partList = new ArrayList<>();
-
-    public void add(PartPrice item){
-
-        partList.add(item);
-    }
-
-    public double getTotalCost(){
-        for (PartPrice pricelist : partList) {
-            cost += pricelist.getCost();
-        }
-        return cost;
+    public void addPart(Part newPart){
+        partList.add(newPart);
     }
     
     //public void setCost(double cost) {this.cost = cost;}
     //public double getCost() {return this.cost;}
 }
-class PartPrice{
-    String name;
-    int quantity;
-    double pricePerPart;
+class Part{
+    public String name;
+    public double price;
+    
+    public Part(){   //start constructor
+        name = "";   //default values
+        price = 0.00;
+    } 
 
-    PartPrice(String name, int quantity, double pricePerPart){
+    public Part(String name, double price){
         this.name=name;
-        this.quantity=quantity;
-        this.pricePerPart=pricePerPart;
+        this.price=price;
     }
 
-    public double getCost(){
-        return pricePerPart*quantity;
+    public double getPrice(){
+        return price;
     }
-
-    public void setQuantity(int quantity){
-        this.quantity=quantity;
+    
+    public void setPrice(double price){
+        this.price = price;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public void setName(String name){
+        this.name = name;
     }
 }
