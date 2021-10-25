@@ -8,7 +8,9 @@ package webscrape;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.jsoup.nodes.Element; 
 import java.io.IOException;
+import java.io.File; 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -27,9 +29,11 @@ public class webscraper extends Application{
     @Override
     public void start(Stage stage) throws IOException{
       
-      Document doc = Jsoup.connect("http://www.javatpoint.com").get();  
-      String title = doc.title();  
-      System.out.println("title is: " + title); 
+    Document doc = Jsoup.connect("http://www.javatpoint.com").get();  
+    String keywords = doc.select("meta[name=keywords]").first().attr("content");  
+    System.out.println("Meta keyword : " + keywords);  
+    String description = doc.select("meta[name=description]").get(0).attr("content");  
+    System.out.println("Meta description : " + description);   
         
     }
     double cost = 0;
