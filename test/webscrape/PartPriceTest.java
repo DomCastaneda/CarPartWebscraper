@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author dcast
  */
+/*
 public class Part {
     
     public Part() {
@@ -29,7 +30,7 @@ public class Part {
 
     /**
      * Test of getCost method, of class Part.
-     */
+    //
     @Test
     public void testGetCost() {
         System.out.println("getCost");
@@ -42,3 +43,4 @@ public class Part {
     }
     
 }
+*/
