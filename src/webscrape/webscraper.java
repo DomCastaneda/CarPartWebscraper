@@ -5,7 +5,6 @@
  */
 package webscrape;
 
-import javafx.geometry.Insets;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,6 +22,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class webscraper extends Application{
     
@@ -38,14 +39,24 @@ public class webscraper extends Application{
     //JSoup webscraping package test
     String html = "https://www.buyautoparts.com/buynow/2019/Mercedes-Benz/C63_AMG/A-C_Compressor/60-04703_NA";
     try {
-     	//Get Document object after parsing the html from given url.
+     	//get Document object after parsing the html from given url
 	Document doc = Jsoup.connect(html).get();
  
-	//Get title from document object.
+	//get title from document object
 	String title = doc.title();
  
-	//Print title.
+	//print title
 	System.out.println("Title: " + title);
+        
+        //get price for particular element
+        Elements content = doc.getElementsByClass("saved-price-green");
+        //System.out.println(content);
+        Elements price = content.first().getElementsByTag("i");
+        
+        for(Element e: price)
+        {
+            System.out.println(e.text());
+        }
         
     } catch (IOException e) {
 	e.printStackTrace();
