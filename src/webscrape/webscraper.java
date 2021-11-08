@@ -6,6 +6,14 @@
 package webscrape;
 
 import javafx.geometry.Insets;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import java.io.IOException;
@@ -15,14 +23,6 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 
 public class webscraper extends Application{
     
@@ -36,11 +36,24 @@ public class webscraper extends Application{
     public void start(Stage stage) throws IOException{
     
     //JSoup webscraping package test
-    Document doc = Jsoup.connect("http://www.javatpoint.com").get();  
-    String keywords = doc.select("meta[name=keywords]").first().attr("content");  
+    String html = "https://www.buyautoparts.com/buynow/2019/Mercedes-Benz/C63_AMG/A-C_Compressor/60-04703_NA";
+    try {
+     	//Get Document object after parsing the html from given url.
+	Document doc = Jsoup.connect(html).get();
+ 
+	//Get title from document object.
+	String title = doc.title();
+ 
+	//Print title.
+	System.out.println("Title: " + title);
+        
+    } catch (IOException e) {
+	e.printStackTrace();
+    }		 
+    /*String keywords = doc.select("meta[name=keywords]").first().attr("content");  
     System.out.println("Meta keyword : " + keywords);  
     String description = doc.select("meta[name=description]").get(0).attr("content");  
-    System.out.println("Meta description : " + description);   
+    System.out.println("Meta description : " + description);   */
     
     stage.setTitle("Car Part Webscraper");
     
@@ -51,7 +64,7 @@ public class webscraper extends Application{
     ComboBox<String> make = new ComboBox();
     //make.setPadding(new Insets(15, 12, 15, 12));
     ObservableList<String> makeList = make.getItems();
-    makeList.add("AUDI");
+    /*makeList.add("AUDI");
     makeList.add("BMW");
     makeList.add("BUICK");
     makeList.add("CHEVROLET");
@@ -69,14 +82,14 @@ public class webscraper extends Application{
     makeList.add("LAND ROVER");
     makeList.add("LEXUS");
     makeList.add("LINCOLN");
-    makeList.add("MAZDA");
+    makeList.add("MAZDA");*/
     makeList.add("MERCEDES-BENZ");
-    makeList.add("MERCURY");
+    /*makeList.add("MERCURY");
     makeList.add("NISSAN");
     makeList.add("PORSCHE");
     makeList.add("SUBARU");
     makeList.add("TOYOTA");
-    makeList.add("VOLKSWAGEN");
+    makeList.add("VOLKSWAGEN");*/
     root.setLeft(make);
     
     Label makeMsg = new Label("Make:");
