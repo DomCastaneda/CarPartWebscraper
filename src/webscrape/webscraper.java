@@ -34,47 +34,45 @@ public class webscraper extends Application{
    }
     
     @Override
-    public void start(Stage stage) throws IOException{
-    
-    //JSoup webscraping package test
-    String html = "https://www.buyautoparts.com/buynow/2019/Mercedes-Benz/C63_AMG/A-C_Compressor/60-04703_NA";
-    try {
-     	//get Document object after parsing the html from given url
-	Document doc = Jsoup.connect(html).get();
- 
-	//get title from document object
-	String title = doc.title();
- 
-	//print title
-	System.out.println("Title: " + title);
-        
-        //get price for particular element
-        Elements content = doc.getElementsByClass("saved-price-green");
-        //System.out.println(content);
-        Elements price = content.first().getElementsByTag("i");
-        
-        for(Element e: price)
-        {
-            System.out.println(e.text());
-        }
-        
-    } catch (IOException e) {
-	e.printStackTrace();
-    }		 
-    /*String keywords = doc.select("meta[name=keywords]").first().attr("content");  
-    System.out.println("Meta keyword : " + keywords);  
-    String description = doc.select("meta[name=description]").get(0).attr("content");  
-    System.out.println("Meta description : " + description);   */
+    public void start(Stage stage) throws IOException{	
     
     stage.setTitle("Car Part Webscraper");
     
     StackPane layout = new StackPane();
     BorderPane root = new BorderPane();
     
-    //comboboxes for make, year, model, part category, part type, part
+    //search  button
+    searchButton = new Button();
+    searchButton.setText("Search");
+    root.setRight(searchButton);
+     
+    Label priceMsg = new Label();
+    
+    Label makeMsg = new Label("Make:");
+    HBox makeHbox = new HBox();
+    //makeHbox.setPadding(new Insets(10, 10, 10, 10));
+    makeHbox.getChildren().add(makeMsg);
+    root.setBottom(makeHbox);
+    
+    //comboboxes for make 
+    // model, part (category, part type, part)
     ComboBox<String> make = new ComboBox();
     //make.setPadding(new Insets(15, 12, 15, 12));
     ObservableList<String> makeList = make.getItems();
+    root.setLeft(make);
+    
+    //combobox for year
+    ComboBox<String> year = new ComboBox();
+    //year.setPadding(new Insets(15, 12, 15, 12));
+    ObservableList<String> yearList = year.getItems();
+    root.setCenter(year);
+    
+    //combobox for model
+    /*ComboBox<String> model = new ComboBox();
+    //year.setPadding(new Insets(15, 12, 15, 12));
+    ObservableList<String> modelList = model.getItems();
+    root.setCenter(model);*/
+    
     /*makeList.add("AUDI");
     makeList.add("BMW");
     makeList.add("BUICK");
@@ -92,8 +90,8 @@ public class webscraper extends Application{
     makeList.add("KIA");
     makeList.add("LAND ROVER");
     makeList.add("LEXUS");
-    makeList.add("LINCOLN");
-    makeList.add("MAZDA");*/
+    makeList.add("LINCOLN");*/
+    makeList.add("MAZDA");
     makeList.add("MERCEDES-BENZ");
     /*makeList.add("MERCURY");
     makeList.add("NISSAN");
@@ -101,42 +99,65 @@ public class webscraper extends Application{
     makeList.add("SUBARU");
     makeList.add("TOYOTA");
     makeList.add("VOLKSWAGEN");*/
-    root.setLeft(make);
-    
-    Label makeMsg = new Label("Make:");
-    HBox makeHbox = new HBox();
-    //makeHbox.setPadding(new Insets(10, 10, 10, 10));
-    makeHbox.getChildren().add(makeMsg);
-    root.setBottom(makeHbox);
     
     make.setOnAction(new EventHandler<ActionEvent>(){
-        @Override
-        public void handle(ActionEvent event){
-            makeMsg.setText(make.valueProperty().get());
+                @Override
+                public void handle(ActionEvent event){
+                    yearList.clear();
+                    
+                    if(make.valueProperty().get() == "MERCEDES-BENZ"){
+                        yearList.add("2021");
+                        yearList.add("2020");
+                        yearList.add("2019");
+                    }
+                    if(make.valueProperty().get() == "MAZDA"){
+                        yearList.add("2022");
+                        yearList.add("2021");
+                    }
+                }
+            });
+    
+    /*modelList.add("A220");
+    modelList.add("AMG GT");
+    modelList.add("AMG GT 63");
+    root.setCenter(model);*/
+    
+    //root.setLeft(make + year + model);
+
+    
+    //JSoup webscraping package test
+    String html = "https://www.buyautoparts.com/buynow/2019/Mercedes-Benz/C63_AMG/A-C_Compressor/60-04703_NA";
+    try {
+     	//get Document object after parsing the html from given url
+	Document doc = Jsoup.connect(html).get();
+ 
+	//get title from document object
+	String title = doc.title();
+ 
+	//print title
+	System.out.println("Part: " + title);
+        
+        //get price for particular element
+        Elements content = doc.getElementsByClass("saved-price-green");
+        //System.out.println(content);
+        Elements price = content.first().getElementsByTag("i");
+        
+        for(Element e: price)
+        {
+            HBox priceHbox = new HBox();
+            priceHbox.getChildren().add(priceMsg);
+            root.setBottom(priceHbox);
+            searchButton.setOnAction(new EventHandler<ActionEvent>(){
+                @Override
+                public void handle(ActionEvent event){
+                    priceMsg.setText(make.valueProperty().get() + "\n" + year.valueProperty().get() + "\n" + "C63 AMG A/C Compressor All Models 60-04703 NA" + "\n" + "Price: " + e.text());
+                }
+            });
         }
-    });
-    
-    /*
-    //combobox for year
-    ComboBox<String> year = new ComboBox();
-    //year.setPadding(new Insets(15, 12, 15, 12));
-    ObservableList<String> yearList = year.getItems();
-    yearList.add("2021");
-    yearList.add("2020");
-    root.setCenter(year);
-    
-    Label yearMsg = new Label("Year:");
-    HBox yearHbox = new HBox();
-    yearHbox.setPadding(new Insets(10, 10, 10, 10));
-    yearHbox.getChildren().add(yearMsg);
-    root.setBottom(yearHbox);
-    
-    year.setOnAction(new EventHandler<ActionEvent>(){
-        @Override
-        public void handle(ActionEvent event){
-            yearMsg.setText(year.valueProperty().get());
-        }
-    });*/
+        
+    } catch (IOException e) {
+	e.printStackTrace();
+    }
     
     //combobox for model
     ComboBox model = new ComboBox();
@@ -149,11 +170,6 @@ public class webscraper extends Application{
 
     //combobox for part
     ComboBox part = new ComboBox();
-    
-    //search  button
-    searchButton = new Button();
-    searchButton.setText("Search");
-    root.setRight(searchButton);
     
     Scene scene = new Scene(root, 500, 450);
     stage.setScene(scene);
