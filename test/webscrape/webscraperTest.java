@@ -1,8 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* Copyright (C) Dominic Castaneda - All Rights Reserved
+* Unauthorized copying of this file, via any medium is strictly prohibited 
+* Proprietary and confidential
+* Written by Dominic Castaneda <dcastaneda2828@gmail.com>, November 2021
+*/
 package webscrape;
 
 import java.util.ArrayList;
@@ -13,10 +14,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author dcast
- */
 public class webscraperTest {
     
     public webscraperTest() {
