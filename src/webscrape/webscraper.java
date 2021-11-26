@@ -34,26 +34,26 @@ public class webscraper extends Application
     Stage window;
     Scene scene;
     Button searchButton;
+    String html = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/a220/tire_pressure_monitoring_system_sensor_tpms/73-70485_fnmr";
+    String outputTitleString = "";
     
     public static void main(String[] args){
       Application.launch(args); 
    }
     
     @Override
-    public void start(Stage stage) throws IOException{	
+    public void start(Stage stage) throws IOException
+    {	
         window = stage;
         window.setTitle("Car Part Webscraper");
+        
+        VBox layout = new VBox(10);
+        layout.setPadding(new Insets(20, 20, 20, 20));
         
         //search  button
         searchButton = new Button();
         searchButton.setText("Search");
         
-        VBox layout = new VBox(10);
-        layout.setPadding(new Insets(20, 20, 20, 20));
-        
-        //label outputs cheapest price, product info and seller's  website
-        Label priceMsg = new Label();
-
         //combobox for make 
         ComboBox<String> make = new ComboBox();
         make.setPromptText("Select Make: ");
@@ -63,59 +63,249 @@ public class webscraper extends Application
         ComboBox<String> year = new ComboBox();
         year.setPromptText("Select Year: ");
         ObservableList<String> yearList = year.getItems();
-
+        
+        //combobox for model
+        ComboBox<String> model = new ComboBox();
+        model.setPromptText("Select Model: ");
+        ObservableList<String> modelList = model.getItems();
+        
+        //combobox for part
+        ComboBox<String> part = new ComboBox();
+        part.setPromptText("Select Part: ");
+        ObservableList<String> partList = part.getItems();
+        
+        //adds make to initial combobox
         makeList.add("MAZDA");
         makeList.add("MERCEDES-BENZ");
 
+        //updates yearList once make is selected
         make.setOnAction(new EventHandler<ActionEvent>()
         {
             @Override
-            public void handle(ActionEvent event){
+            public void handle(ActionEvent event)
+            {
                 yearList.clear();
-
+                
+                ////=================[MERCEDES-BENZ YEARS]=================
+                //outputs year from chosen make
                 if(make.valueProperty().get() == "MERCEDES-BENZ")
                 {
-                    yearList.add("2021");
-                    yearList.add("2020");
                     yearList.add("2019");
+                    yearList.add("2018");
                 }
+                
+                ////=================[MAZDA YEARS]=================
+                //outputs year from chosen make
                 if(make.valueProperty().get() == "MAZDA")
                 {
-                    yearList.add("2022");
-                    yearList.add("2021");
+                    yearList.add("2019");
+                    yearList.add("2018");
                 }
             }
         });
-
-        HBox priceHbox = new HBox();
         
+        //updates modelList once year is selected
+        year.setOnAction(new EventHandler<ActionEvent>()
+        {
+            @Override
+             public void handle(ActionEvent event)
+             {
+                modelList.clear();
+            
+                ////=================[2019 MERCEDES-BENZ MODELS]=================
+                //outputs model from chosen make and years
+                if(make.valueProperty().get() == "MERCEDES-BENZ" && year.valueProperty().get() == "2019")
+                {
+                    modelList.add("A220");
+                    modelList.add("AMG GT");
+                }
+                ////=================[2018 MERCEDES-BENZ MODELS]=================
+                //outputs model from chosen make and years
+                if(make.valueProperty().get() == "MERCEDES-BENZ" && year.valueProperty().get() == "2018")
+                {
+                    modelList.add("AMG GT");
+                    modelList.add("AMG GT C");
+                }
+                
+                ////=================[2019 MAZDA MODELS]=================
+                //outputs model from chosen make and years
+                if(make.valueProperty().get() == "MAZDA" && year.valueProperty().get() == "2019")
+                {
+                    modelList.add("CX-3");
+                    modelList.add("CX-5");
+                }
+                ////=================[2018 MAZDA MODELS]=================
+                //outputs model from chosen make and years
+                if(make.valueProperty().get() == "MAZDA" && year.valueProperty().get() == "2018")
+                {
+                    modelList.add("3");
+                    modelList.add("6");
+                }
+             }
+        });
+        
+        //updates partList once model is selected
+        model.setOnAction(new EventHandler<ActionEvent>()
+        {
+            @Override
+             public void handle(ActionEvent event)
+             {
+                partList.clear();
+            
+                ////=================[2019 MERCEDES-BENZ A220 Parts]=================
+                //outputs part from chosen year and model
+                if(year.valueProperty().get() == "2019" && model.valueProperty().get() == "A220")
+                {
+                    partList.add("Tire Pressure Monitoring System Sensor");
+                }
+                
+                ////=================[2019 MERCEDES-BENZ AMG GT Parts]=================
+                //outputs part from chosen year and model
+                if(year.valueProperty().get() == "2019" && model.valueProperty().get() == "AMG GT")
+                {
+                    partList.add("Engine Auxilary Water Pump");
+                }
+                
+                ////=================[2018 MERCEDES-BENZ AMG GT Parts]=================
+                //outputs part from chosen year and model
+                if(year.valueProperty().get() == "2018" && model.valueProperty().get() == "AMG GT")
+                {
+                    partList.add("Brake Pad Set");
+                }
+                
+                ////=================[2018 MERCEDES-BENZ AMG GT C Parts]=================
+                //outputs part from chosen year and model
+                if(year.valueProperty().get() == "2018" && model.valueProperty().get() == "AMG GT C")
+                {
+                    partList.add("Brake Pad Set");
+                }
+                
+                ////=================[2019 MAZDA CX-3 Parts]=================
+                //outputs part from chosen year and model
+                if(year.valueProperty().get() == "2019" && model.valueProperty().get() == "CX-3")
+                {
+                    partList.add("A/C Compressor");
+                }
+                
+                ////=================[2019 MAZDA CX-5 Parts]=================
+                //outputs part from chosen year and model
+                if(year.valueProperty().get() == "2019" && model.valueProperty().get() == "CX-5")
+                {
+                    partList.add("A/C Compressor");
+                }
+                
+                ////=================[2018 MAZDA 3 Parts]=================
+                //outputs part from chosen year and model
+                if(year.valueProperty().get() == "2018" && model.valueProperty().get() == "3")
+                {
+                    partList.add("A/C Compressor");
+                }
+                
+                ////=================[2018 MAZDA 6 Parts]=================
+                //outputs part from chosen year and model
+                if(year.valueProperty().get() == "2018" && model.valueProperty().get() == "6")
+                {
+                    partList.add("A/C Compressor");
+                }
+             }
+        });
+        //updates Jsoup urls once part is selected
+        part.setOnAction(new EventHandler<ActionEvent>()
+        {
+            @Override
+             public void handle(ActionEvent event)
+             {
+            
+                ////=================[2019 MERCEDES-BENZ A220 Parts]=================
+                if(model.valueProperty().get() == "A220" || part.valueProperty().get() == "Tire Pressure Monitoring System Sensor")
+                {
+                    html = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/a220/tire_pressure_monitoring_system_sensor_tpms/73-70485_fnmr";
+                }
+                
+                ////=================[2019 MERCEDES-BENZ AMG GT Parts]=================
+                if(model.valueProperty().get() == "AMG GT" || part.valueProperty().get() == "Engine Auxilary Water Pump")
+                {
+                    html = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/amg_gt/engine_auxiliary_water_pump/hn-00214_fnnb";
+                    System.out.println(html);
+                }
+                
+                ////=================[2018 MERCEDES-BENZ AMG GT Parts]=================
+                if(model.valueProperty().get() == "AMG GT" || part.valueProperty().get() == "Brake Pad Set")
+                {
+                    
+                }
+                
+                ////=================[2018 MERCEDES-BENZ AMG GT C Parts]=================
+                if(model.valueProperty().get() == "AMG GT C" || part.valueProperty().get() == "Brake Pad Set")
+                {
+                    
+                }
+                
+                ////=================[2019 MAZDA CX-3 Parts]=================
+                if(model.valueProperty().get() == "CX-3" || part.valueProperty().get() == "A/C Compressor")
+                {
+                    
+                }
+                
+                ////=================[2019 MAZDA CX-5 Parts]=================
+                if(model.valueProperty().get() == "CX-5" || part.valueProperty().get() == "A/C Compressor")
+                {
+                    
+                }
+                
+                ////=================[2018 MAZDA 3 Parts]=================
+                if(model.valueProperty().get() == "3" || part.valueProperty().get() == "A/C Compressor")
+                {
+                    
+                }
+                ////=================[2018 MAZDA 6 Parts]=================
+                if(model.valueProperty().get() == "6" || part.valueProperty().get() == "A/C Compressor")
+                {
+                    
+                }
+             }
+        });
+
+        HBox outputHbox = new HBox();
+        //label outputs cheapest price, product info and seller's  website
+        Label outputPrice = new Label();
+
         //JSoup webscraping car part sellers for prices
-        String html = "https://www.buyautoparts.com/buynow/2019/Mercedes-Benz/C63_AMG/A-C_Compressor/60-04703_NA";
+
         try {
             //get Document object after parsing the html from given url
             Document doc = Jsoup.connect(html).get();
 
             //get title from document object
             String title = doc.title();
-
-            //print title
-            System.out.println("Part: " + title);
+            Elements titleContent = doc.getElementsByClass("cad_header");
+            Elements partTitleElement = titleContent.first().select("span[itemprop]");
+            for(Element e: partTitleElement)
+            {
+                   
+                outputTitleString = "Part: " + e.text();
+            }
 
             //get price for particular element
-            Elements content = doc.getElementsByClass("saved-price-green");
-            //System.out.println(content);
-            Elements price = content.first().getElementsByTag("i");
+            Elements priceContent = doc.getElementsByClass("saved-price-green");
+            Elements price = priceContent.first().getElementsByTag("i");
 
             for(Element e: price)
             {
-                priceHbox.getChildren().add(priceMsg);
-                
+                outputHbox.getChildren().add(outputPrice);
+         
                 searchButton.setOnAction(new EventHandler<ActionEvent>()
                 {
                     @Override
                     public void handle(ActionEvent event)
                     {
-                        priceMsg.setText(make.valueProperty().get() + "\n" + year.valueProperty().get() + "\n" + "C63 AMG A/C Compressor All Models 60-04703 NA" + "\n" + "Price: " + e.text());
+                        outputPrice.setText(/*year.valueProperty().get() + " " +
+                                make.valueProperty().get() + " " +
+                                model.valueProperty().get() + " " +
+                                part.valueProperty().get() + "\n" +*/ 
+                                outputTitleString + "\n" +
+                                "Cheapest Price: " + e.text() + "\n" +
+                                "Part Website: ");
                     }
                 });
             }
@@ -126,17 +316,17 @@ public class webscraper extends Application
         
         layout.getChildren().addAll(make);
         layout.getChildren().addAll(year);
+        layout.getChildren().addAll(model);
+        layout.getChildren().addAll(part);
         layout.getChildren().addAll(searchButton);
-        layout.getChildren().addAll(priceHbox);
+        layout.getChildren().addAll(outputHbox);
 
         scene = new Scene(layout, 500, 450);
         window.setScene(scene);
         window.show();
     }
     
-    double cost = 0;
     List<Part> partList = new ArrayList<Part>();
-
     public void addPart(Part newPart)
     {
         partList.add(newPart);
