@@ -174,7 +174,7 @@ public class webscraper extends Application
                 //outputs part from chosen year and model
                 if(year.valueProperty().get() == "2019" && model.valueProperty().get() == "AMG GT")
                 {
-                    partList.add("Engine Auxilary Water Pump");
+                    partList.add("Tire Pressure Monitoring System Sensor");
                 }
                 
                 ////=================[2018 MERCEDES-BENZ AMG GT Parts]=================
@@ -188,7 +188,7 @@ public class webscraper extends Application
                 //outputs part from chosen year and model
                 if(year.valueProperty().get() == "2018" && model.valueProperty().get() == "AMG GT C")
                 {
-                    partList.add("Brake Pad Set");
+                    partList.add("Starter");
                 }
                 
                 ////=================[2019 MAZDA CX-3 Parts]=================
@@ -209,7 +209,7 @@ public class webscraper extends Application
                 //outputs part from chosen year and model
                 if(year.valueProperty().get() == "2018" && model.valueProperty().get() == "3")
                 {
-                    partList.add("A/C Compressor");
+                    partList.add("Rack and Pinion");
                 }
                 
                 ////=================[2018 MAZDA 6 Parts]=================
@@ -232,58 +232,79 @@ public class webscraper extends Application
                     //checks buyautoparts website pricing
                     htmlBAP = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/a220/tire_pressure_monitoring_system_sensor_tpms/73-70485_fnmr";
                     htmlAAP = "https://shop.advanceautoparts.com/p/huf-north-america-intellisens-universal-tpms-sensor-433mhz-metal-valve-included-uvs4040/11925017-P";
+                    
                     outputPriceBAP();
                     outputPriceAAP();
                 }
                 
                 ////=================[2019 MERCEDES-BENZ AMG GT Parts]=================
-                if(model.valueProperty().get() == "AMG GT" && part.valueProperty().get() == "Engine Auxilary Water Pump")
+                if(model.valueProperty().get() == "AMG GT" && part.valueProperty().get() == "Tire Pressure Monitoring System Sensor")
                 {
                     //checks buyautoparts website pricing
-                    htmlBAP = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/amg_gt/engine_auxiliary_water_pump/hn-00214_fnnb";
-                    
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/amg_gt/tire_pressure_monitoring_system_sensor_tpms/73-70426_fnmr?xref=152929232";
+                    htmlAAP = "https://shop.advanceautoparts.com/p/huf-north-america-oe-funct-tpms-433mhz-rde036v21/12339110-P?searchTerm=2019+Mercedes+Benz+AMG+GT+TPMS";
+
                     outputPriceBAP();
+                    outputPriceAAP();
                 }
                 
                 ////=================[2018 MERCEDES-BENZ AMG GT Parts]=================
                 if(model.valueProperty().get() == "AMG GT" && part.valueProperty().get() == "Brake Pad Set")
                 {
                     htmlBAP = "https://www.buyautoparts.com/buynow/2018/mercedes-benz/amg_gt/brake_pad_set/70-07414_bhkq";
+                    htmlAAP = "https://shop.advanceautoparts.com/p/carquest-professional-platinum-semi-metallic-brake-pads-rear-4-pad-set-pmd1681h/10866442-P?searchTerm=2018+Mercedes+Benz+AMG+GT+Brake+Pad+Set";
+                    
                     outputPriceBAP();
+                    outputPriceAAP();
                 }
                 
                 ////=================[2018 MERCEDES-BENZ AMG GT C Parts]=================
-                if(model.valueProperty().get() == "AMG GT C" && part.valueProperty().get() == "Brake Pad Set")
+                if(model.valueProperty().get() == "AMG GT C" && part.valueProperty().get() == "Starter")
                 {
-                    htmlBAP = "https://www.buyautoparts.com/buynow/2018/mercedes-benz/amg_gt_c/brake_pad_set/70-07414_bhkq";
-                    outputPriceBAP();                
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2018/mercedes-benz/amg_gt_c/starter/30-05815_an";
+                    htmlAAP = "https://shop.advanceautoparts.com/p/carquest-premium-starter-remanufactured-52080s/11888517-P?searchTerm=2018+Mercedes+Benz+AMG+GT+C+Starter";
+                    
+                    outputPriceBAP(); 
+                    outputPriceAAP();
                 }
                 
                 ////=================[2019 MAZDA CX-3 Parts]=================
                 if(model.valueProperty().get() == "CX-3" && part.valueProperty().get() == "A/C Compressor")
                 {
                     htmlBAP = "https://www.buyautoparts.com/buynow/2019/mazda/cx-3/a-c_compressor/60-04633_nc";
-                    outputPriceBAP();
+                    htmlAAP = "https://shop.advanceautoparts.com/p/carquest-premium-new-compressor-with-clutch-gm-a6-t58047/20897902-P?searchTerm=2019+Mazda+CX-3+A%2FC+Compressor";
+                    
+                    outputPriceBAP(); 
+                    outputPriceAAP();
                 }
                 
                 ////=================[2019 MAZDA CX-5 Parts]=================
                 if(model.valueProperty().get() == "CX-5" && part.valueProperty().get() == "A/C Compressor")
                 {
                     htmlBAP = "https://www.buyautoparts.com/buynow/2019/mazda/cx-5/a-c_compressor/60-03943_na";
-                    outputPriceBAP();
+                    htmlAAP = "https://shop.advanceautoparts.com/p/red-dot-a-c-a-c-compressor-12-volt-que-a-c-compressor-w-clutch-replacement-for-sanden-1027t6-75r89582q/11279032-P?searchTerm=2019+Mazda+CX-5+A%2FC+Compressor";
+                    
+                    outputPriceBAP(); 
+                    outputPriceAAP();
                 }
                 
                 ////=================[2018 MAZDA 3 Parts]=================
-                if(model.valueProperty().get() == "3" && part.valueProperty().get() == "A/C Compressor")
+                if(model.valueProperty().get() == "3" && part.valueProperty().get() == "Rack and Pinion")
                 {
-                    htmlBAP = "https://www.buyautoparts.com/buynow/2018/mazda/3/a-c_compressor/60-03943_na";
-                    outputPriceBAP();
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2018/mazda/3/rack_and_pinion/80-70399_r";
+                    htmlAAP = "https://shop.advanceautoparts.com/p/cardone-rack-and-pinion-assembly-1g-2009/12043173-P?searchTerm=Rack+and+Pinion";
+                    
+                    outputPriceBAP(); 
+                    outputPriceAAP();
                 }
                 ////=================[2018 MAZDA 6 Parts]=================
                 if(model.valueProperty().get() == "6" && part.valueProperty().get() == "A/C Compressor")
                 {
                     htmlBAP = "https://www.buyautoparts.com/buynow/2018/mazda/6/a-c_compressor/60-03942_nc";
-                    outputPriceBAP();
+                    htmlAAP = "https://shop.advanceautoparts.com/p/mando-new-oe-ac-compressor-with-clutch-pre-filled-oil-direct-replacement-10a1441/12217827-P?searchTerm=A%2FC+Compressor";
+                    
+                    outputPriceBAP(); 
+                    outputPriceAAP();
                 }
              }
         });
@@ -317,7 +338,7 @@ public class webscraper extends Application
         layout.getChildren().addAll(partLink);
         
         //scene setup
-        scene = new Scene(layout, 500, 450);
+        scene = new Scene(layout, 400, 350);
         window.setScene(scene);
         window.show();
     }
@@ -365,7 +386,7 @@ public class webscraper extends Application
                 
                 //remove $ from elementToString for parsing
                 String priceString = elementToString.replace("$", "");
-                System.out.println("Website 1: " + priceString);
+                System.out.println("Buy Auto Parts: " + priceString);
                 
                 //parses priceString
                 priceBAP = Double.parseDouble(priceString);
@@ -376,7 +397,7 @@ public class webscraper extends Application
                     public void handle(ActionEvent event)
                     {
                         outputPrice.setText(outputTitleString + "\n" +
-                                "Cheapest Price: " + min(priceBAP, priceAAP));
+                                "Cheapest Price: $" + min(priceBAP, priceAAP));
                     }
                 });
             }
@@ -410,7 +431,7 @@ public class webscraper extends Application
                 
             //remove $ from elementToString for parsing
             String priceString = elementToString.replace("Special Offers $", "");
-            System.out.println("Website 2: " + priceString);
+            System.out.println("Advance Auto Parts: " + priceString);
 
             //parses priceString
             priceAAP = Double.parseDouble(priceString);
