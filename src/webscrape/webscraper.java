@@ -39,11 +39,14 @@ public class webscraper extends Application
     Stage window;
     Scene scene;
     Button searchButton;
-    String html = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/a220/tire_pressure_monitoring_system_sensor_tpms/73-70485_fnmr";
+    String htmlBAP = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/a220/tire_pressure_monitoring_system_sensor_tpms/73-70485_fnmr";
+    String htmlAAP = "https://shop.advanceautoparts.com/p/huf-north-america-intellisens-universal-tpms-sensor-433mhz-metal-valve-included-uvs4040/11925017-P";
     String outputTitleString = "";
     HBox outputHbox = new HBox();
-    Hyperlink partLink = new Hyperlink("Part Website");
+    Hyperlink partLink = new Hyperlink("Seller's Website");
+    
     double priceBAP = 0.0;
+    double priceAAP = 0.0;
     
     public static void main(String[] args){
       Application.launch(args); 
@@ -227,68 +230,79 @@ public class webscraper extends Application
                 if(model.valueProperty().get() == "A220" && part.valueProperty().get() == "Tire Pressure Monitoring System Sensor")
                 {
                     //checks buyautoparts website pricing
-                    html = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/a220/tire_pressure_monitoring_system_sensor_tpms/73-70485_fnmr";
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/a220/tire_pressure_monitoring_system_sensor_tpms/73-70485_fnmr";
+                    htmlAAP = "https://shop.advanceautoparts.com/p/huf-north-america-intellisens-universal-tpms-sensor-433mhz-metal-valve-included-uvs4040/11925017-P";
                     outputPriceBAP();
+                    outputPriceAAP();
                 }
                 
                 ////=================[2019 MERCEDES-BENZ AMG GT Parts]=================
                 if(model.valueProperty().get() == "AMG GT" && part.valueProperty().get() == "Engine Auxilary Water Pump")
                 {
                     //checks buyautoparts website pricing
-                    html = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/amg_gt/engine_auxiliary_water_pump/hn-00214_fnnb";
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2019/mercedes-benz/amg_gt/engine_auxiliary_water_pump/hn-00214_fnnb";
+                    
                     outputPriceBAP();
                 }
                 
                 ////=================[2018 MERCEDES-BENZ AMG GT Parts]=================
                 if(model.valueProperty().get() == "AMG GT" && part.valueProperty().get() == "Brake Pad Set")
                 {
-                    html = "https://www.buyautoparts.com/buynow/2018/mercedes-benz/amg_gt/brake_pad_set/70-07414_bhkq";
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2018/mercedes-benz/amg_gt/brake_pad_set/70-07414_bhkq";
                     outputPriceBAP();
                 }
                 
                 ////=================[2018 MERCEDES-BENZ AMG GT C Parts]=================
                 if(model.valueProperty().get() == "AMG GT C" && part.valueProperty().get() == "Brake Pad Set")
                 {
-                    html = "https://www.buyautoparts.com/buynow/2018/mercedes-benz/amg_gt_c/brake_pad_set/70-07414_bhkq";
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2018/mercedes-benz/amg_gt_c/brake_pad_set/70-07414_bhkq";
                     outputPriceBAP();                
                 }
                 
                 ////=================[2019 MAZDA CX-3 Parts]=================
                 if(model.valueProperty().get() == "CX-3" && part.valueProperty().get() == "A/C Compressor")
                 {
-                    html = "https://www.buyautoparts.com/buynow/2019/mazda/cx-3/a-c_compressor/60-04633_nc";
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2019/mazda/cx-3/a-c_compressor/60-04633_nc";
                     outputPriceBAP();
                 }
                 
                 ////=================[2019 MAZDA CX-5 Parts]=================
                 if(model.valueProperty().get() == "CX-5" && part.valueProperty().get() == "A/C Compressor")
                 {
-                    html = "https://www.buyautoparts.com/buynow/2019/mazda/cx-5/a-c_compressor/60-03943_na";
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2019/mazda/cx-5/a-c_compressor/60-03943_na";
                     outputPriceBAP();
                 }
                 
                 ////=================[2018 MAZDA 3 Parts]=================
                 if(model.valueProperty().get() == "3" && part.valueProperty().get() == "A/C Compressor")
                 {
-                    html = "https://www.buyautoparts.com/buynow/2018/mazda/3/a-c_compressor/60-03943_na";
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2018/mazda/3/a-c_compressor/60-03943_na";
                     outputPriceBAP();
                 }
                 ////=================[2018 MAZDA 6 Parts]=================
                 if(model.valueProperty().get() == "6" && part.valueProperty().get() == "A/C Compressor")
                 {
-                    html = "https://www.buyautoparts.com/buynow/2018/mazda/6/a-c_compressor/60-03942_nc";
+                    htmlBAP = "https://www.buyautoparts.com/buynow/2018/mazda/6/a-c_compressor/60-03942_nc";
                     outputPriceBAP();
                 }
              }
         });
         
+        //updates link to seller based on cheaper website
         partLink.setOnAction(new EventHandler<ActionEvent>()
         {
             @Override
             public void handle(ActionEvent event)
             {
                 try {
-                Desktop.getDesktop().browse(new URL(html).toURI());
+                    if(priceBAP < priceAAP)
+                    {  
+                        Desktop.getDesktop().browse(new URL(htmlBAP).toURI());
+                    }
+                    if(priceAAP < priceBAP)
+                    {
+                        Desktop.getDesktop().browse(new URL(htmlAAP).toURI());
+                    }
                 } catch (Exception e) {}
             }
         });
@@ -309,9 +323,9 @@ public class webscraper extends Application
     }
     
     //finds cheapest of three websites
-    public static double min(double web1, double web2, double web3) 
+    public static double min(double web1, double web2) 
     {
-        return Math.min(Math.min(web1, web2), web3);
+        return Math.min(web1, web2);
     }
     
     //outputs price for BUYAUTOPARTS
@@ -327,15 +341,14 @@ public class webscraper extends Application
 
         try {
             //get Document object after parsing the html from given url
-            Document doc = Jsoup.connect(html).get();
+            Document doc = Jsoup.connect(htmlBAP).get();
 
             //get title from document object
             String title = doc.title();
             Elements titleContent = doc.getElementsByClass("cad_header");
             Elements partTitleElement = titleContent.first().select("span[itemprop]");
             for(Element e: partTitleElement)
-            {
-                   
+            {  
                 outputTitleString = "Part: " + e.text();
             }
 
@@ -346,10 +359,14 @@ public class webscraper extends Application
             for(Element e: price)
             {
                 outputHbox.getChildren().add(outputPrice);
+                
                 //makes element e to a String
                 String elementToString = e.text().toString();
+                
                 //remove $ from elementToString for parsing
                 String priceString = elementToString.replace("$", "");
+                System.out.println("Website 1: " + priceString);
+                
                 //parses priceString
                 priceBAP = Double.parseDouble(priceString);
                 
@@ -358,12 +375,45 @@ public class webscraper extends Application
                     @Override
                     public void handle(ActionEvent event)
                     {
-                        outputPrice.setText(
-                                outputTitleString + "\n" +
-                                "Cheapest Price: " + elementToString + "\n");
+                        outputPrice.setText(outputTitleString + "\n" +
+                                "Cheapest Price: " + min(priceBAP, priceAAP));
                     }
                 });
             }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    //outputs price for BUYAUTOPARTS
+    public void outputPriceAAP()
+    {
+        //label outputs cheapest price, product info and seller's  website
+        Label outputPrice = new Label();
+        
+        //clear outputHbox
+        //outputHbox.getChildren().clear();
+
+        //JSoup webscraping car part sellers for prices
+
+        try {
+            //get Document object after parsing the html from given url
+            Document doc = Jsoup.connect(htmlAAP).get();
+
+            //get price for particular element
+            Elements priceContent = doc.getElementsByClass("css-fr1cma");
+            outputHbox.getChildren().add(outputPrice);
+
+            //remove $ from elementToString for parsing
+            String elementToString = priceContent.text().toString();
+                
+            //remove $ from elementToString for parsing
+            String priceString = elementToString.replace("Special Offers $", "");
+            System.out.println("Website 2: " + priceString);
+
+            //parses priceString
+            priceAAP = Double.parseDouble(priceString);
 
         } catch (IOException e) {
             e.printStackTrace();
