@@ -338,7 +338,7 @@ public class webscraper extends Application
         layout.getChildren().addAll(partLink);
         
         //scene setup
-        scene = new Scene(layout, 400, 350);
+        scene = new Scene(layout, 500, 350);
         window.setScene(scene);
         window.show();
     }
