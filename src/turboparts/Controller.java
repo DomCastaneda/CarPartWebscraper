@@ -231,11 +231,11 @@ public class Controller implements Initializable {
             htmlAAP = "https://shop.advanceautoparts.com/p/carquest-premium-starter-remanufactured-52080s/11888517-P?searchTerm=2018+Mercedes+Benz+AMG+GT+C+Starter";
         }
 
-        /* =================[2019 MAZDA CX-3 Parts]================= */
+        /*/* =================[2019 MAZDA CX-3 Parts]================= */
         if (model.valueProperty().get() == "CX-3" 
                  && part.valueProperty().get() == "A/C Compressor") {
              htmlBAP = "https://www.buyautoparts.com/buynow/2019/mazda/cx-3/a-c_compressor/60-04633_nc";
-             htmlAAP = "https://shop.advanceautoparts.com/p/carquest-premium-new-compressor-with-clutch-gm-a6-t58047/20897902-P?searchTerm=2019+Mazda+CX-3+A%2FC+Compressor";
+             htmlAAP = "https://shop.advanceautoparts.com/p/worldpac-a-c-compressor-r10003200333api/12617675-P?searchTerm=2019+Mazda+CX-3+A%2FC+Compressor";
         }
 
         /* =================[2019 MAZDA CX-5 Parts]================= */
@@ -257,7 +257,9 @@ public class Controller implements Initializable {
              htmlBAP = "https://www.buyautoparts.com/buynow/2018/mazda/6/a-c_compressor/60-03942_nc";
              htmlAAP = "https://shop.advanceautoparts.com/p/mando-new-oe-ac-compressor-with-clutch-pre-filled-oil-direct-replacement-10a1441/12217827-P?searchTerm=A%2FC+Compressor";
         }
-    }  
+    }
+    
+    @FXML
     /* updates link to seller based on cheaper website */
     private void linkAction(ActionEvent event) {
         try {
@@ -323,14 +325,14 @@ public class Controller implements Initializable {
             Document doc = Jsoup.connect(htmlAAP).get();
 
             /* get price for particular element */
-            Elements priceContent = doc.getElementsByClass("css-fr1cma");
+            Elements priceContent = doc.getElementsByClass("css-18r6ecx");
             outputHBox.getChildren().add(outputPrice);
 
             /* remove $ from elementToString for parsing */
             String elementToString = priceContent.text().toString();
 
             /* remove $ from elementToString for parsing */
-            String priceString = elementToString.replace("Special Offers $", "");
+            String priceString = elementToString.replace("$", "");
             System.out.println("Advance Auto Parts: " + priceString);
 
             /* parses priceString */
