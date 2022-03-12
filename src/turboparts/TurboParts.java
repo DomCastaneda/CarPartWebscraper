@@ -36,16 +36,19 @@ import org.jsoup.select.Elements;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class TurboParts extends Application{
+public class TurboParts extends Application
+{
     Stage window;
     Scene scene;
     
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
         launch(args); 
     }
     
     @Override
-    public void start(Stage stage) throws Exception {	
+    public void start(Stage stage) throws Exception 
+    {	
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         /* scene setup */
