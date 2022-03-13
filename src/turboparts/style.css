@@ -1,0 +1,36 @@
+.mainbg-color {
+    -fx-background-color: #F5F5F5;
+}
+.primary-color {
+    -fx-background-color: #0C0B24;
+}
+.secondary-color {
+    -fx-background-color: #0a093b;
+}
+.third-color {
+    -fx-background-color: #E9E9E9;
+}
+
+.tab-selected {
+    -fx-background-color: #23224f;
+}
+.button {
+    -fx-background-color: #0a093b;
+}
+.button:hover {
+    -fx-background-color: #23224f;
+}
+.button:pressed {
+    -fx-background-color: #0a093b;
+}
+
+.cb {
+    font-size: inherit;
+}
+
+.search {
+    -fx-background-color: #0a093b;
+}
+.search:hover {
+    -fx-background-color: #23224f;
+}

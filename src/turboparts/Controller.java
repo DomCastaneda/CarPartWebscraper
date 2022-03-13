@@ -61,6 +61,8 @@ public class Controller implements Initializable {
         /* adds make to initial combobox */
         makeList.add("MAZDA");
         makeList.add("MERCEDES-BENZ");
+        
+        partLink.setVisible(false);
     }
     
     /* searches for cheapest site */
@@ -71,6 +73,8 @@ public class Controller implements Initializable {
         
         outputPrice.setText(outputTitleString + "\n" +
                                 "Cheapest Price: $" + min(priceBAP, priceAAP));
+        
+        partLink.setVisible(true);
     }
     
     /* updates yearList once make is selected */
