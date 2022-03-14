@@ -4,9 +4,10 @@ and use the combo boxes to search for specified parts for your car. The search r
 will output the cheapest price and a link to the part's provider.
 
 # Running Build Instructions
-1. java -jar CarPartWebscraper.jar
-2. Choose the make, year, model and part
-3. Click Search Button
+1. Download TurboParts.zip
+2. Open Terminal
+3. cd into dist folder
+4. java -jar TurboParts.jar
 
 # Check-In 1 Release Notes
 ## MVP
