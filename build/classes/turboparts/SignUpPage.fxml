@@ -1,14 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="turboparts.SignUpPageController">
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="659.0" style="-fx-background-color: #0C0B24;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="turboparts.SignUpPageController">
     <stylesheets>
-        <URL value="@signuppage.css"/>
+        <URL value="@signuppage.css" />
     </stylesheets>
+   <children>
+      <HBox layoutX="-3.0" layoutY="-1.0" prefHeight="416.0" prefWidth="662.0" style="-fx-background-color: #0C0B24 #0C0B24;">
+         <children>
+            <VBox alignment="CENTER" prefHeight="416.0" prefWidth="332.0">
+               <children>
+                  <Label text="Turbo Parts" textFill="WHITE">
+                     <font>
+                        <Font name="AppleGothic Regular" size="32.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/carlogo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox prefHeight="416.0" prefWidth="330.0" style="-fx-background-color: #F5F5F5;">
+               <children>
+                  <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="62.0" prefWidth="330.0">
+                     <children>
+                        <Button fx:id="btnClose" mnemonicParsing="false" prefHeight="26.0" prefWidth="35.0">
+                           <graphic>
+                              <ImageView fitHeight="23.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                 <image>
+                                    <Image url="@../img/x_logo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="38.0" prefWidth="330.0">
+                     <children>
+                        <Label text="Sign Up">
+                           <font>
+                              <Font name="Al Bayan Plain" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="330.0">
+                     <children>
+                        <TextField fx:id="email" prefHeight="27.0" prefWidth="235.0" promptText="Email Address" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="330.0">
+                     <children>
+                        <TextField fx:id="fullname" prefHeight="27.0" prefWidth="235.0" promptText="Full Name" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="330.0">
+                     <children>
+                        <PasswordField fx:id="password" prefHeight="27.0" prefWidth="235.0" promptText="Password" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="errorMessageLabel" alignment="CENTER" prefHeight="20.0" prefWidth="209.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnLogin" mnemonicParsing="false" prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: #00000;" text="Sign Up">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="296.0" text="Forgot Password?">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="30.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
 </AnchorPane>

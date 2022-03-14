@@ -5,36 +5,18 @@
  */
 package turboparts;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.fxml.FXMLLoader;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
-import javafx.application.Application;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.awt.Desktop;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import static javafx.application.Application.launch;
-
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 
 /**
@@ -42,31 +24,118 @@ import org.jsoup.nodes.Document;
  *
  * @author jaepark
  */
-public class SignUpPageController extends Application 
+public class SignUpPageController implements Initializable
 {
-    Stage window;
-    Scene scene;
+    @FXML
+    private Label label;
+   
+    @FXML 
+    private Pane content;
+    
+    @FXML 
+    private TextField email;
+    
+    @FXML
+    private TextField fullname;
+    
+    @FXML 
+    private PasswordField password;
+    
+    @FXML
+    private Button btnClose;
+    
+    @FXML
+    private Button btnLogin;
+    
+    @FXML 
+    private Label errorMessageLabel;
+    private String errorMessage = "";
+    
+    private boolean isFieldFilled()
+    {
+        boolean isFilled = true;
+        if(email.getText().isEmpty())
+        {
+            isFilled = false;
+            errorMessage = "Fill in Email Address";
+        }
+        
+        if(fullname.getText().isEmpty())
+        {
+            isFilled = false;
+            errorMessage = "Fill in Full Name";
+        }
+        
+        if(password.getText().isEmpty())
+        {
+            isFilled = false;
+            if(errorMessage.isEmpty())
+            {
+                errorMessage = "Password is empty";
+            }
+            else{
+                errorMessage += "\nPassword is empty";
+            }
+        }
+        errorMessageLabel.setText(errorMessage);
+        return isFilled;
+    }
+    
+    
+    private boolean isValid()
+    {
+        boolean isValid = true;
+        if(!email.getText().equals(TurboParts.EMAIL))
+        {
+            isValid = false;
+            errorMessage = "Invalid Email";
+        }
+        
+        if(!fullname.getText().equals(TurboParts.NAME))
+        {
+            isValid = false;
+            errorMessage = "Invalid Name";
+        }
+        
+        if(!password.equals(TurboParts.PASSWORD))
+        {
+            isValid = false;
+            if(errorMessage.isEmpty())
+            {
+                errorMessage = "Invalid Password";
+            }
+            else{
+                errorMessage += "\nInvalid Password";
+            }
+        }
+        errorMessageLabel.setText(errorMessage);
+        return isValid;
+    }
+    
     
     @Override
-    public void start(Stage stage) throws Exception
+    public void initialize(URL url, ResourceBundle rb) 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("SignUpPage.fxml"));
-//        stage.setTitle("Sign Up");
-//        stage.setScene(new Scene(root, 1220, 740));
-//        stage.show();
-        /* scene setup */
-        window = stage;
-        scene = new Scene(root);
-        window.setScene(scene);
-        window.show();
+        btnClose.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            @Override
+            public void handle(MouseEvent event)
+            {
+                System.exit(0);
+            }
+        });
+        
+        btnLogin.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            @Override
+            public void handle(MouseEvent event)
+            {
+                errorMessage = "";
+                if(isFieldFilled() && isValid())
+                {
+                    //do something;
+                }
+            }
+    });
     }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) 
-     {
-        launch(args);
-    }
-    
 }

@@ -30,6 +30,7 @@ import java.awt.Desktop;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import javafx.stage.StageStyle;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -40,6 +41,9 @@ public class TurboParts extends Application
 {
     Stage window;
     Scene scene;
+    public static final String EMAIL = "email";
+    public static final String NAME = "name";
+    public static final String PASSWORD = "123";
     
     public static void main(String[] args)
     {
@@ -49,13 +53,13 @@ public class TurboParts extends Application
     @Override
     public void start(Stage stage) throws Exception 
     {	
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SignUpPage.fxml"));
+        stage.initStyle(StageStyle.UNDECORATED);
         
-        /* scene setup */
-        window = stage;
-        scene = new Scene(root);
-        window.setScene(scene);
-        window.show();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.show();
     }
     
     /* finds cheapest of three websites */
