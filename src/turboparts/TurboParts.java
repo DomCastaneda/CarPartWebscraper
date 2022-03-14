@@ -40,13 +40,17 @@ public class TurboParts extends Application{
     Stage window;
     Scene scene;
     
+    public static final String EMAIL = "email";
+    public static final String NAME = "name";
+    public static final String PASSWORD = "123";
+    
     public static void main(String[] args){
         launch(args); 
     }
     
     @Override
     public void start(Stage stage) throws Exception {	
-        Parent root = FXMLLoader.load(getClass().getResource("SearchPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SignUpPage.fxml"));
         
         /* scene setup */
         window = stage;
