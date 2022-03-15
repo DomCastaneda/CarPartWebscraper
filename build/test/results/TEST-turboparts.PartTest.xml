@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="LAPTOP-BBQGAIN6" name="turboparts.PartTest" skipped="0" tests="4" time="0.052" timestamp="2022-03-15T00:02:21">
+<testsuite errors="0" failures="0" hostname="LAPTOP-BBQGAIN6" name="turboparts.PartTest" skipped="0" tests="4" time="0.047" timestamp="2022-03-15T00:47:03">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -61,7 +61,7 @@
     <property name="libs.spring-webmvc5.0.javadoc" value="" />
     <property name="libs.spring-framework500.classpath" value="C:\Program Files\NetBeans-12.4\netbeans\platform\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-aop-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-aspects-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-beans-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-context-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-context-indexer-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-context-support-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-core-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-expression-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-instrument-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-jcl-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-jdbc-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-jms-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-messaging-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-orm-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-oxm-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-test-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-tx-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-web-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-webflux-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-webmvc-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-12.4\netbeans\java\modules\ext\spring-5\spring-websocket-5.2.9.RELEASE.jar" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner turboparts.PartTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\dcast\OneDrive\Documents\SE498\TurboParts\build\test\results\TEST-turboparts.PartTest.xml crashfile=C:\Users\dcast\OneDrive\Documents\SE498\TurboParts\build\junitvmwatcher3417356318114682888.properties propsfile=C:\Users\dcast\OneDrive\Documents\SE498\TurboParts\build\junit4575779515777219224.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner turboparts.PartTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\dcast\OneDrive\Documents\SE498\TurboParts\build\test\results\TEST-turboparts.PartTest.xml crashfile=C:\Users\dcast\OneDrive\Documents\SE498\TurboParts\build\junitvmwatcher5660644168109268265.properties propsfile=C:\Users\dcast\OneDrive\Documents\SE498\TurboParts\build\junit6614070139576863947.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="build.sysclasspath" value="ignore" />
     <property name="manifest.encoding" value="UTF-8" />
@@ -320,7 +320,7 @@
     <property name="libs.metro.javadoc" value="C:\Program Files\NetBeans-12.4\netbeans\enterprise\docs\webservices-api-javadoc.jar;C:\Program Files\NetBeans-12.4\netbeans\enterprise\docs\webservices-extra-javadoc.jar;C:\Program Files\NetBeans-12.4\netbeans\enterprise\docs\webservices-extra-api-javadoc.jar;C:\Program Files\NetBeans-12.4\netbeans\enterprise\docs\webservices-rt-javadoc.jar;C:\Program Files\NetBeans-12.4\netbeans\enterprise\docs\webservices-tools-javadoc.jar" />
     <property name="libs.struts.maven-pom" value="" />
     <property name="ant.file.jfx-impl" value="C:\Users\dcast\OneDrive\Documents\SE498\TurboParts\nbproject\jfx-impl.xml" />
-    <property name="jnidispatch.path" value="C:\Users\dcast\AppData\Local\Temp\jna-95398307\jna193458083034121070.dll" />
+    <property name="jnidispatch.path" value="C:\Users\dcast\AppData\Local\Temp\jna-95398307\jna7037777936008971220.dll" />
     <property name="netbeans.home+have.tests" value="true" />
     <property name="annotation.processing.processor.options" value="" />
     <property name="libs.testng.maven-pom" value="" />
@@ -450,10 +450,10 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans-12.4\netbeans\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="turboparts.PartTest" name="testGetPrice" time="0.002" />
+  <testcase classname="turboparts.PartTest" name="testGetPrice" time="0.003" />
   <testcase classname="turboparts.PartTest" name="testGetName" time="0.001" />
   <testcase classname="turboparts.PartTest" name="testSetName" time="0.0" />
-  <testcase classname="turboparts.PartTest" name="testSetPrice" time="0.0" />
+  <testcase classname="turboparts.PartTest" name="testSetPrice" time="0.001" />
   <system-out><![CDATA[Running setPrice()
 Running getName()
 Running setName()
