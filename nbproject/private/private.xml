@@ -12,16 +12,8 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/test/turboparts/TurboPartsTest.java</file>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/src/turboparts/SettingsController.java</file>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/src/turboparts/TurboParts.java</file>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/src/turboparts/SearchPage.fxml</file>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/src/turboparts/SavedController.java</file>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/src/turboparts/style.css</file>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/test/turboparts/PartTest.java</file>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/src/turboparts/SearchController.java</file>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/src/turboparts/SavedPage.fxml</file>
-            <file>file:/C:/Users/dcast/OneDrive/Documents/SE330/CarPartWebscraper/src/turboparts/SettingsPage.fxml</file>
+            <file>file:/C:/Users/dcast/OneDrive/Documents/SE498/TurboParts/src/turboparts/TurboParts.java</file>
+            <file>file:/C:/Users/dcast/OneDrive/Documents/SE498/TurboParts/src/turboparts/SignUpController.java</file>
         </group>
     </open-files>
 </project-private>
