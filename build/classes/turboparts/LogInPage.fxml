@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="turboparts.SignUpController">
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="turboparts.LogInController">
    <children>
       <HBox layoutX="-3.0" layoutY="-1.0" prefHeight="416.0" prefWidth="662.0">
          <children>
@@ -35,7 +35,7 @@
                   <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="62.0" prefWidth="330.0" />
                   <HBox alignment="TOP_CENTER" prefHeight="38.0" prefWidth="330.0">
                      <children>
-                        <Label text="Sign Up">
+                        <Label text="Log In">
                            <font>
                               <Font name="Al Bayan Plain" size="19.0" />
                            </font>
@@ -49,32 +49,28 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="53.0" prefWidth="330.0">
                      <children>
-                        <TextField fx:id="fullname" prefHeight="27.0" prefWidth="235.0" promptText="Full Name" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="330.0">
-                     <children>
                         <PasswordField fx:id="password" prefHeight="27.0" prefWidth="235.0" promptText="Password" />
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="330.0" />
                   <Label fx:id="errorMessageLabel" alignment="CENTER" prefHeight="20.0" prefWidth="209.0" textFill="RED">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="30.0" prefWidth="230.0" text="Sign Up">
+                  <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="30.0" prefWidth="230.0" text="Log In">
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" top="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="296.0" text="Already A Member?">
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="296.0" text="Not a Member?">
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" top="30.0" />
                      </VBox.margin>
                   </Label>
-                  <Button fx:id="btnLogin1" layoutX="60.0" layoutY="323.0" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="30.0" prefWidth="75.0" text="Log In">
+                  <Button fx:id="btnLogin1" layoutX="60.0" layoutY="323.0" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="30.0" prefWidth="75.0" text="Sign Up">
                      <VBox.margin>
-                        <Insets bottom="5.0" left="128.0" top="5.0" />
+                        <Insets bottom="5.0" left="128.0" right="5.0" />
                      </VBox.margin>
                   </Button>
                </children>

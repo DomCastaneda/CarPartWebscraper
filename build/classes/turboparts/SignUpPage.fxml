@@ -67,11 +67,16 @@
                         <Insets left="50.0" right="50.0" top="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="296.0" text="Forgot Password?">
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="296.0" text="Already A Member?">
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" top="30.0" />
                      </VBox.margin>
                   </Label>
+                  <Button fx:id="btnLogin1" layoutX="60.0" layoutY="323.0" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="30.0" prefWidth="75.0" text="Log In">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="128.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </children>
