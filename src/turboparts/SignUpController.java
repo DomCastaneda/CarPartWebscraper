@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -47,7 +48,10 @@ public class SignUpController implements Initializable
     private Button btnClose;
     
     @FXML
-    private Button btnLogin;
+    private Button btnLogin;  
+    
+    @FXML
+    private Button btnSignUp;
     
     @FXML 
     private Label errorMessageLabel;
@@ -57,84 +61,19 @@ public class SignUpController implements Initializable
     private Scene scene;
     private Parent root;
     
-    private boolean isFieldFilled()
-    {
-        boolean isFilled = true;
-        if(email.getText().isEmpty())
-        {
-            isFilled = false;
-            errorMessage = "Fill in Email Address";
-        }
-        
-        if(fullname.getText().isEmpty())
-        {
-            isFilled = false;
-            errorMessage = "Fill in Full Name";
-        }
-        
-        if(password.getText().isEmpty())
-        {
-            isFilled = false;
-            if(errorMessage.isEmpty())
-            {
-                errorMessage = "Password is empty";
-            }
-            else{
-                errorMessage += "\nPassword is empty";
-            }
-        }
-        errorMessageLabel.setText(errorMessage);
-        return isFilled;
-    }
-    
-    
-    private boolean isValid()
-    {
-        boolean isValid = false;
-        if(email.getText().equals(TurboParts.EMAIL))
-        {
-            isValid = true;
-            errorMessage = "Invalid Email";
-        }
-        
-        if(fullname.getText().equals(TurboParts.NAME))
-        {
-            isValid = true;
-            errorMessage = "Invalid Name";
-        }
-        
-        if(password.equals(TurboParts.PASSWORD))
-        {
-            isValid = false;
-            if(errorMessage.isEmpty())
-            {
-                errorMessage = "Invalid Password";
-            }
-            else{
-                errorMessage += "\nInvalid Password";
-            }
-        }
-        errorMessageLabel.setText(errorMessage);
-        
-        if(isValid == true){
-            btnLogin.setOnMouseClicked(new EventHandler<MouseEvent>()
-            {
-                @Override
-                public void handle(MouseEvent event)
-                {
-                    errorMessage = "";
-                    if(isFieldFilled() && isValid())
-                    {
-                        //do something;
-                    }
-                }
-            }); 
-        }
-        return isValid;
-    }
     
     public void switchToSearch(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SearchPage.fxml"));
+        
+        /* scene switch */
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    public void switchToLogin(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("LogInPage.fxml"));
         
         /* scene switch */
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -147,28 +86,18 @@ public class SignUpController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        /* btnClose.setOnMouseClicked(new EventHandler<MouseEvent>()
-        {
+        btnSignUp.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(MouseEvent event)
-            {
-                System.exit(0);
-            }
-        }); 
-        */
-        
-        /* btnLogin.setOnMouseClicked(new EventHandler<MouseEvent>()
-        {
-            @Override
-            public void handle(MouseEvent event)
-            {
-                errorMessage = "";
-                if(isFieldFilled() && isValid())
-                {
-                    //do something;
+            public void handle(ActionEvent event) {
+                if (!email.getText().trim().isEmpty() && !password.getText().trim().isEmpty()) {
+                    DBUtils.signUpUser(event, email.getText(), password.getText());
+                }  else {
+                    System.out.println("Please fill in all information.");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Please fill in username and password to sign up.");
+                    alert.show();
                 }
             }
-    }); 
-    */
+        });
     }
 }

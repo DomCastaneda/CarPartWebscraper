@@ -44,25 +44,21 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="50.0" prefWidth="330.0">
                      <children>
-                        <TextField fx:id="email" prefHeight="27.0" prefWidth="235.0" promptText="Email Address" />
+                        <TextField fx:id="email" prefHeight="27.0" prefWidth="235.0" promptText="Username" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="53.0" prefWidth="330.0">
                      <children>
-                        <TextField fx:id="fullname" prefHeight="27.0" prefWidth="235.0" promptText="Full Name" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="330.0">
-                     <children>
                         <PasswordField fx:id="password" prefHeight="27.0" prefWidth="235.0" promptText="Password" />
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="330.0" />
                   <Label fx:id="errorMessageLabel" alignment="CENTER" prefHeight="20.0" prefWidth="209.0" textFill="RED">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="30.0" prefWidth="230.0" text="Sign Up">
+                  <Button fx:id="btnSignUp" mnemonicParsing="false" prefHeight="30.0" prefWidth="230.0" text="Sign Up">
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" top="30.0" />
                      </VBox.margin>
@@ -72,7 +68,7 @@
                         <Insets left="50.0" right="50.0" top="30.0" />
                      </VBox.margin>
                   </Label>
-                  <Button fx:id="btnLogin1" layoutX="60.0" layoutY="323.0" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="30.0" prefWidth="75.0" text="Log In">
+                  <Button fx:id="btnLogin" layoutX="60.0" layoutY="323.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: transparent;" text="Log In" textFill="#0400ff" underline="true">
                      <VBox.margin>
                         <Insets bottom="5.0" left="128.0" top="5.0" />
                      </VBox.margin>
