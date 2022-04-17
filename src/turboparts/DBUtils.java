@@ -3,6 +3,7 @@
 * Unauthorized copying of this file, via any medium is strictly prohibited 
 * Proprietary and confidential
 * Written by Dominic Castaneda <dcastaneda2828@gmail.com>, April 2022
+* References: WittCode JavaFX Login and Signup Form with Database Connection
 */
 package turboparts;
 
@@ -19,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 public class DBUtils {
@@ -36,25 +38,28 @@ public class DBUtils {
             resultSet = psCheckUserExists.executeQuery();
             
             if(resultSet.isBeforeFirst()) {
-                System.out.println("User Alreaady Exists.");
+                System.out.println("User Already Exists.");
                 Alert alert = new Alert(AlertType.ERROR);
-                alert.setContentText("You cannot use this username.");
+                alert.setGraphic(null);
+                alert.setContentText("That username already exists.");
                 alert.show();
             } else {
-                psInsert = connection.prepareStatement("INSERT INTO users (username, password VALUES (?, ?)");
+                psInsert = connection.prepareStatement("INSERT INTO users (username, password) VALUES (?, ?)");
                 psInsert.setString(1, username);
                 psInsert.setString(2, password);
                 psInsert.executeUpdate();
                 
+                Alert welcome = new Alert(AlertType.INFORMATION);
+                welcome.setGraphic(null);
+                welcome.setHeaderText(null);
+                welcome.setContentText("Welcome " + username + "!");
+                welcome.show();
+                
                 try {
                     FXMLLoader loader = new FXMLLoader(DBUtils.class.getResource("SearchPage.fxml"));
                     root = loader.load();
-        
-                /* scene switch 
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();*/
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setScene(new Scene(root, 980, 683));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -114,6 +119,12 @@ public class DBUtils {
                     String retrievedPassword = resultSet.getString("password");
                     if (retrievedPassword.equals(password)) {
                        try {
+                            Alert welcome = new Alert(AlertType.INFORMATION);
+                            welcome.setGraphic(null);
+                            welcome.setHeaderText(null);
+                            welcome.setContentText("Welcome " + username + "!");
+                            welcome.show();
+                            
                             FXMLLoader loader = new FXMLLoader(DBUtils.class.getResource("SearchPage.fxml"));
                             root = loader.load();
                             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

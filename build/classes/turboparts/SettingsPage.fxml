@@ -97,7 +97,7 @@
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Text>
-      <Button layoutX="828.0" layoutY="592.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="109.0" text="Sign Out">
+      <Button layoutX="828.0" layoutY="592.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="53.0" prefWidth="109.0" text="Sign Out">
          <font>
             <Font name="SansSerif Regular" size="20.0" />
          </font>
