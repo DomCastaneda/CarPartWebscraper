@@ -32,6 +32,7 @@ will output the cheapest price and a link to the part's provider.
 ## Feature 5 - Account Database - Dominic
 - Users can sign up or log in to their created accounts
 - User information (username, password) stored on a local SQL database
+- Users can sign out on settings page
 
 ## Feature 6 - Login Page - Jae
 - FXML page to allow users to log in to their accounts
