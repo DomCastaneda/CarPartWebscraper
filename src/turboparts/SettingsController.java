@@ -58,3 +58,28 @@ public class SettingsController implements Initializable {
         
     }
 }
+
+class changeUser{
+    public String username;
+    public String newUsername;
+    public changeUser() {
+        username = "";
+        newUsername = "";
+    }
+    public changeUser(String username, String newUsername) {
+        this.username = username;
+        this.newUsername = newUsername;
+    }
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public String getNewUsername() {
+        return newUsername;
+    }
+    public void SetNewUsername(String newUsername){
+        this.newUsername = newUsername;
+    }
+}
