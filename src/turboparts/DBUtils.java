@@ -52,7 +52,7 @@ public class DBUtils {
                 Alert welcome = new Alert(AlertType.INFORMATION);
                 welcome.setGraphic(null);
                 welcome.setHeaderText(null);
-                welcome.setContentText("Welcome " + username + "!");
+                welcome.setContentText("Welcome, " + username + "!");
                 welcome.show();
                 
                 try {
@@ -122,7 +122,7 @@ public class DBUtils {
                             Alert welcome = new Alert(AlertType.INFORMATION);
                             welcome.setGraphic(null);
                             welcome.setHeaderText(null);
-                            welcome.setContentText("Welcome " + username + "!");
+                            welcome.setContentText("Welcome, " + username + "!");
                             welcome.show();
                             
                             FXMLLoader loader = new FXMLLoader(DBUtils.class.getResource("SearchPage.fxml"));
