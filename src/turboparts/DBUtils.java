@@ -23,7 +23,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
-public class DBUtils {
+public class DBUtils 
+{
     public static void signUpUser(ActionEvent event, String username, String password) {
         Connection connection = null;
         PreparedStatement psInsert = null;
@@ -97,7 +98,8 @@ public class DBUtils {
             }
         }
     }
-    public static void logInUser(ActionEvent event, String username, String password) {
+    public static void logInUser(ActionEvent event, String username, String password) 
+    {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -165,6 +167,11 @@ public class DBUtils {
                 }
             }
         }
+    }
+    
+    public static void updateUser(ActionEvent event, String email, String password) 
+    {
+        
     }
 }
 
