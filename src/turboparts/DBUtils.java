@@ -169,11 +169,84 @@ public class DBUtils
         }
     }
     
-    public static void updateUser(ActionEvent event, String email, String password) 
+    public static void updateUser(ActionEvent event, String username, String password) 
     {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Parent root = null;
         
+//        try {
+//            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/turboparts?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "toor");
+//            preparedStatement = connection.prepareStatement("SELECT username, password FROM users where username =? AND password=?");
+//            preparedStatement.setString(1, username);
+//            preparedStatement.setString(2, password);
+//            resultSet = preparedStatement.executeQuery();
+            
+//            if (!resultSet.isBeforeFirst()) 
+//            {
+//                System.out.println("User not found.");
+//                Alert alert = new Alert(Alert.AlertType.ERROR);
+//                alert.setContentText("Provided credentials are incorrect.");
+//                alert.show();
+//            } 
+//            else 
+//            {
+//                while (resultSet.next()) 
+//                {
+//                    String retrievedPassword = resultSet.getString("password");
+//                    if (retrievedPassword.equals(password)) 
+//                    {
+//                       try {
+//                            Alert welcome = new Alert(AlertType.INFORMATION);
+//                            welcome.setGraphic(null);
+//                            welcome.setHeaderText(null);
+//                            welcome.setContentText("Welcome, " + username + "!");
+//                            welcome.show();
+//                            
+//                            FXMLLoader loader = new FXMLLoader(DBUtils.class.getResource("SettingsPage.fxml"));
+//                            root = loader.load();
+//                            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//                            stage.setScene(new Scene(root, 980, 683));
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+//                    } 
+//                    else 
+//                    {
+//                        System.out.println("Passwords did not match.");
+//                        Alert alert = new Alert(Alert.AlertType.ERROR);
+//                        alert.setContentText("Provided password is incorrect.");
+//                        alert.show();
+//                    }
+//                }
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } finally {
+//            if (resultSet != null) {
+//                try {
+//                    resultSet.close();
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            if (preparedStatement != null) {
+//                try {
+//                    preparedStatement.close();
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            if (connection != null) {
+//                try {
+//                    connection.close();
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+        }
     }
-}
 
 class User {
     public String username;

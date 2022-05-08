@@ -38,7 +38,7 @@ public class SettingsController implements Initializable
     private Button confirm;
     
     @FXML 
-    private TextField email;
+    private TextField username;
     
     @FXML
     private PasswordField password;
@@ -72,8 +72,8 @@ public class SettingsController implements Initializable
         confirm.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (!email.getText().trim().isEmpty() && !password.getText().trim().isEmpty()) {
-                    DBUtils.updateUser(event, email.getText(), password.getText());
+                if (!username.getText().trim().isEmpty() && !password.getText().trim().isEmpty()) {
+                    DBUtils.updateUser(event, username.getText(), password.getText());
                 }  else {
                     System.out.println("Please fill in all information.");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
