@@ -2,7 +2,7 @@
 
 <!--If we include fontawesome import, we can't edit fxml file
 but if we exclude it, we can't run the project-->
-<!--<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>-->
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>

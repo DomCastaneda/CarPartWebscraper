@@ -12,12 +12,13 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/ProfilePage.fxml</file>
             <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/SettingsPage.fxml</file>
             <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/TurboParts.java</file>
             <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/SearchPage.fxml</file>
+            <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/ProfilePageController.java</file>
             <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/SignUpController.java</file>
             <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/DBUtils.java</file>
-            <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/SearchController.java</file>
             <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/LogInController.java</file>
             <file>file:/Users/jaepark/Desktop/SE%20498/TurboParts/src/turboparts/SettingsController.java</file>
         </group>

@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package turboparts;
 
 import java.io.IOException;
@@ -18,35 +23,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-
 /**
  * FXML Controller class
  *
  * @author jaepark
  */
-public class LogInController implements Initializable
+public class ProfilePageController implements Initializable 
 {
-    @FXML
-    private Label label;
-   
-    @FXML 
-    private Pane content;
-    
-    @FXML 
-    private TextField username;
-    
-    @FXML
-    private TextField fullname;
-    
-    @FXML 
-    private PasswordField password;
-    
-    @FXML
-    private Button btnLogin;
-    
-    @FXML
-    private Button btnSignUp;
-    
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -61,8 +44,8 @@ public class LogInController implements Initializable
         stage.show();
     }
     
-    public void switchToSignUp(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SignUpPage.fxml"));
+    public void switchToLogin(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("LogInPage.fxml"));
         
         /* scene switch */
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -71,14 +54,23 @@ public class LogInController implements Initializable
         stage.show();
     }
     
+    public void switchToSetting(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("SettingsPage.fxml"));
+        
+        /* scene switch */
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        btnLogin.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                DBUtils.logInUser(event, username.getText(), password.getText());
-            }
-        });
-    }
+        // TODO
+    }    
+    
 }
