@@ -3,7 +3,7 @@ package turboparts;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.application.Application;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,9 +15,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -45,6 +46,16 @@ public class SettingsController implements Initializable
     
     @FXML 
     private ComboBox comboBox;
+    
+    @FXML 
+    private Label label;
+    
+    @FXML 
+    private Button button;
+    
+    @FXML 
+    private AnchorPane mainPane;
+    
     
     public void switchToSearch(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SearchPage.fxml"));
@@ -92,6 +103,23 @@ public class SettingsController implements Initializable
                 }
             }
         });
+        
+        ToggleSwitch button = new ToggleSwitch();
+        SimpleBooleanProperty isOn = button.switchOnProperty();
+        isOn.addListener((observable, oldValue, newValue) -> {
+            
+            if(newValue)
+            {
+                button.getScene().getRoot().getStylesheets().add(getClass().getResource("style.css").toString());
+                System.out.println("Removing the css");                
+            }
+            else
+            {
+                button.getScene().getRoot().getStylesheets().remove(getClass().getResource("style.css").toString());     
+                System.out.println("Removing the css");
+            }
+    });
+        mainPane.getChildren().add(button);
     }
 }
 

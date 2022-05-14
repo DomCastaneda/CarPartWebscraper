@@ -17,7 +17,7 @@ but if we exclude it, we can't run the project-->
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="664.0" prefWidth="977.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="turboparts.SettingsController">
+<AnchorPane id="AnchorPane" prefHeight="664.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="turboparts.SettingsController">
     <children>
       <HBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="983.0" styleClass="primary-color" stylesheets="@style.css">
          <children>
@@ -140,27 +140,17 @@ but if we exclude it, we can't run the project-->
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Button>
-      <Text layoutX="355.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language">
-         <font>
-            <Font name="SansSerif Regular" size="20.0" />
-         </font>
-      </Text>
-      <ComboBox layoutX="670.0" layoutY="454.0" prefWidth="150.0" promptText="English">
-         <padding>
-            <Insets left="45.0" />
-         </padding>
-      </ComboBox>
       <Button layoutX="828.0" layoutY="592.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="53.0" prefWidth="109.0" text="Sign Out">
          <font>
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Button>
-      <Text layoutX="355.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mode">
+      <Text layoutX="355.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mode">
          <font>
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Text>
-      <ComboBox layoutX="670.0" layoutY="496.0" prefWidth="150.0" promptText="Light">
+      <ComboBox layoutX="670.0" layoutY="451.0" prefWidth="150.0">
          <padding>
             <Insets left="45.0" />
          </padding>
