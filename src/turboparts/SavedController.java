@@ -8,20 +8,29 @@ package turboparts;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class SavedController implements Initializable {
     
+    @FXML
+    public Label outputHistory;
+    
     private Stage stage;
     private Scene scene;
-    private Parent root;
+    private Parent root; 
+    
+    public List<String> historyList = new ArrayList<>();
     
     public void switchToSearch(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SearchPage.fxml"));
@@ -44,6 +53,7 @@ public class SavedController implements Initializable {
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) { 
+        
     }
 }

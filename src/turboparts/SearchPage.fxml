@@ -15,11 +15,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="664.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="turboparts.SearchController">
     <children>
-      <HBox fx:id="outputHBox" alignment="BOTTOM_LEFT" layoutX="199.0" layoutY="602.0" prefHeight="80.0" prefWidth="784.0" styleClass="third-color" stylesheets="@style.css">
+      <HBox fx:id="outputHBox" layoutX="199.0" layoutY="483.0" prefHeight="200.0" prefWidth="784.0" styleClass="third-color" stylesheets="@style.css">
          <children>
-            <Label fx:id="outputPrice" alignment="TOP_LEFT" prefHeight="111.0" prefWidth="784.0">
+            <Label fx:id="outputPrice" alignment="TOP_LEFT" maxWidth="784.0" prefHeight="200.0" prefWidth="784.0">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="SansSerif Regular" size="9.0" />
                </font>
                <padding>
                   <Insets left="7.0" />
@@ -27,14 +27,14 @@
             </Label>
          </children>
       </HBox>
-      <ComboBox fx:id="make" layoutX="224.0" layoutY="321.0" onAction="#makeAction" prefHeight="69.0" prefWidth="175.0" promptText="Select Make" styleClass="cb" stylesheets="@style.css">
+      <ComboBox fx:id="make" layoutX="224.0" layoutY="221.0" onAction="#makeAction" prefHeight="69.0" prefWidth="175.0" promptText="Select Make" styleClass="cb" stylesheets="@style.css">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </ComboBox>
-      <ComboBox fx:id="year" layoutX="410.0" layoutY="321.0" onAction="#yearAction" prefHeight="69.0" prefWidth="175.0" promptText="Select Year" styleClass="cb" />
-      <ComboBox fx:id="model" layoutX="596.0" layoutY="321.0" onAction="#modelAction" prefHeight="69.0" prefWidth="175.0" promptText="Select Model" styleClass="cb" />
-      <ComboBox fx:id="part" layoutX="783.0" layoutY="321.0" onAction="#partAction" prefHeight="69.0" prefWidth="175.0" promptText="Select Part" styleClass="cb" />
+      <ComboBox fx:id="year" layoutX="410.0" layoutY="221.0" onAction="#yearAction" prefHeight="69.0" prefWidth="175.0" promptText="Select Year" styleClass="cb" />
+      <ComboBox fx:id="model" layoutX="596.0" layoutY="221.0" onAction="#modelAction" prefHeight="69.0" prefWidth="175.0" promptText="Select Model" styleClass="cb" />
+      <ComboBox fx:id="part" layoutX="783.0" layoutY="221.0" onAction="#partAction" prefHeight="69.0" prefWidth="175.0" promptText="Select Part" styleClass="cb" />
       <HBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="983.0" styleClass="primary-color" stylesheets="@style.css">
          <children>
             <Label graphicTextGap="20.0" prefHeight="139.0" prefWidth="387.0" text="Turbo Parts" textFill="WHITE">
@@ -97,7 +97,7 @@
             </Button>
          </children>
       </VBox>
-        <Button fx:id="searchButton" layoutX="503.0" layoutY="425.0" onAction="#searchButtonAction" prefHeight="48.0" prefWidth="175.0" styleClass="search" stylesheets="@style.css" text="Search" textFill="WHITE">
+        <Button fx:id="searchButton" layoutX="503.0" layoutY="314.0" onAction="#searchButtonAction" prefHeight="48.0" prefWidth="175.0" styleClass="search" stylesheets="@style.css" text="Search" textFill="WHITE">
          <font>
             <Font name="SansSerif Regular" size="30.0" />
          </font></Button>
@@ -110,10 +110,15 @@
             </Label>
          </children>
       </HBox>
-      <Hyperlink fx:id="partLink" alignment="BOTTOM_LEFT" layoutX="200.0" layoutY="643.0" onAction="#linkAction" prefHeight="40.0" prefWidth="140.0" text="Part Link">
+      <Hyperlink fx:id="partLink" alignment="BOTTOM_LEFT" layoutX="871.0" layoutY="342.0" onAction="#linkAction" prefHeight="35.0" prefWidth="91.0" text="Part Link">
          <font>
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Hyperlink>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="199.0" layoutY="447.0" prefHeight="35.0" prefWidth="167.0" text="Search History">
+         <font>
+            <Font name="SansSerif Regular" size="24.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
