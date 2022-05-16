@@ -38,6 +38,10 @@ will output the cheapest price and a link to the part's provider.
 - FXML page to allow users to log in to their accounts
 - Users with no account can click link to signup page
 
+## Feature 7 - Recent Search History - Dominic
+- Once the user chooses a part, the search history should show recently searched parts 
+- Search history shown on bottom of search page
+
 
 # References
 https://www.youtube.com/watch?v=yw7B85174JQ
