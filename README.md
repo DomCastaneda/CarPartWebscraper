@@ -30,11 +30,11 @@ will output the cheapest price and a link to the part's provider.
 - Allow users to create an account by providing their username and password
 
 ## Feature 5 - Settings Page - Jae
-- Settings page that allows users changes to username, password, Dark/Light Mode
+- Settings page that allows users to enable Dark/Light Mode and change username/passoword
 
 # Check-In 2 Release Notes
 
-## Feature 6 - Error Message / Welcome Message
+## Feature 6 - Error Message / Welcome Message - Jae
 - Error message pops up when
     - The users try to sign up with existing account
     - The users try to log in with non existing account or wrong password
