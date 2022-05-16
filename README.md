@@ -33,20 +33,28 @@ will output the cheapest price and a link to the part's provider.
 - Settings page that allows users changes to username, password, Dark/Light Mode
 
 # Check-In 2 Release Notes
-## Feature 6 - Account Database - Dominic
+
+## Feature 6 - Error Message / Welcome Message
+- Error message pops up when
+    - The users try to sign up with existing account
+    - The users try to log in with non existing account or wrong password
+- Welcome message pops up when
+    - The users successfully log in
+
+## Feature 7 - Account Database - Dominic
 - Users can sign up or log in to their created accounts
 - User information (username, password) stored on a local SQL database
 - Users can sign out on settings page
 
-## Feature 7 - Login Page - Jae
+## Feature 8 - Login Page - Jae
 - FXML page to allow users to log in to their accounts
 - Users with no account can click link to signup page
 
-## Feature 8 - Recent Search History - Dominic
+## Feature 9 - Recent Search History - Dominic
 - Once the user chooses a part, the search history should show recently searched parts 
 - Search history shown on bottom of search page
 
-## Feature 9 - Dark mode/Light mode - Jae
+## Feature 10 - Dark mode/Light mode - Jae
 - In settings page, user can enable dark mode and light mode 
 
 # References
