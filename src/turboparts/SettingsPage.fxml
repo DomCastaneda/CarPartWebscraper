@@ -71,7 +71,7 @@ but if we exclude it, we can't run the project-->
                         <Image url="@../imgSetting.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" onAction="#switchToSetting" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
                      <padding>
                         <Insets left="15.0" />
                      </padding>
@@ -91,7 +91,7 @@ but if we exclude it, we can't run the project-->
                         <Image url="@../imgProfile.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
                      <padding>
                         <Insets left="15.0" />
                      </padding>
@@ -133,7 +133,7 @@ but if we exclude it, we can't run the project-->
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Text>
-      <Button fx:id="confirm" layoutX="518.0" layoutY="376.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="146.0" text="Confirm">
+      <Button fx:id="confirm" layoutX="518.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" text="Confirm">
          <font>
             <Font name="SansSerif Regular" size="20.0" />
          </font>
