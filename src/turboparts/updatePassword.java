@@ -25,17 +25,20 @@ public class updatePassword
         this.password = password;
         this.newPassword = newPassword;
     }
-    public String getUsername() 
+    public String getPassword() 
     {
         return password;
     }
-    public void setUsername(String password) {
+    public void setPassword(String password) 
+    {
         this.password = password;
     }
-    public String getNewUsername() {
+    public String getNewPassword() 
+    {
         return newPassword;
     }
-    public void SetNewUsername(String newPassword){
+    public void SetNewPassword(String newPassword)
+    {
         this.newPassword = newPassword;
     }   
     
