@@ -58,43 +58,66 @@
       </HBox>
       <VBox layoutY="119.0" prefHeight="564.0" prefWidth="199.0" styleClass="secondary-color" stylesheets="@style.css">
          <children>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="109.0" prefWidth="255.0" text="Search" textFill="WHITE">
-               <graphic>
+            <HBox alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="199.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgSearch.png" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="90.0" onAction="#switchToSearch" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <font>
+                        <Font name="SansSerif Regular" size="20.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="GEAR" size="24" text="Search" />
                      </graphic>
-               <padding>
-                  <Insets left="15.0" />
-               </padding>
-               <font>
-                  <Font name="SansSerif Regular" size="20.0" />
-               </font>
-               <graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="199.0">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgSetting.png" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <font>
+                        <Font name="SansSerif Regular" size="20.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="GEAR" size="24" text="Settings" />
                      </graphic>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="24" />
-               </graphic>
-            </Button>
-<!--            <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSaved" prefHeight="109.0" prefWidth="255.0" text="Saved" textFill="WHITE">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="24" />
-               </graphic>
-               <padding>
-                  <Insets left="15.0" />
-               </padding>
-               <font>
-                  <Font name="SansSerif Regular" size="20.0" />
-               </font>
-            </Button>-->
-            <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="10.0" layoutY="119.0" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="109.0" prefWidth="255.0" text="Settings" textFill="WHITE">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="GEAR" size="24" />
-               </graphic>
-               <padding>
-                  <Insets left="15.0" />
-               </padding>
-               <font>
-                  <Font name="SansSerif Regular" size="20.0" />
-               </font>
-            </Button>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="102.0" prefHeight="90.0" prefWidth="199.0">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgProfile.png" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <font>
+                        <Font name="SansSerif Regular" size="20.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="GEAR" size="24" text="Profile" />
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </VBox>
         <Button fx:id="searchButton" layoutX="503.0" layoutY="314.0" onAction="#searchButtonAction" prefHeight="48.0" prefWidth="175.0" styleClass="search" stylesheets="@style.css" text="Search" textFill="WHITE">

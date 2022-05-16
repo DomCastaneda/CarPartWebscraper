@@ -66,15 +66,15 @@ public class SearchController implements Initializable {
     
     public List<String> history = new ArrayList<>();
     
-//    public void switchToSaved(ActionEvent event) throws IOException {
-//        Parent root = FXMLLoader.load(getClass().getResource("SavedPage.fxml"));
-//        
-//        /* scene switch */
-//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
-//    }
+    public void switchToSearch(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("SearchPage.fxml"));
+        
+        /* scene switch */
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     
     public void switchToSettings(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SettingsPage.fxml"));
@@ -86,6 +86,15 @@ public class SearchController implements Initializable {
         stage.show();
     }
     
+    public void switchToProfile(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ProfilePage.fxml"));
+        
+        /* scene switch */
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         /* combobox for make */
