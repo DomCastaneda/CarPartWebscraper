@@ -20,28 +20,34 @@ will output the cheapest price and a link to the part's provider.
 - Comboboxes: Make -> Year -> Model -> Part -> Search
 
 ## Feature 2 - Shows Cheapest Part Information - Dominic
-- The part with the lowest price and its information is outputted to the bottom of the search page.
+- The part with the lowest price and its information is outputted to the bottom of the search page
 
 ## Feature 3 - Link to Cheapest Website - Dominic
-- A hyperlink to the seller's website with the cheapest option is shown at the bottom of the search page.
+- A hyperlink to the seller's website with the cheapest option is shown at the bottom of the search page
 
 ## Feature 4 - Signup Page - Jae
-- Allow users to create an account by providing their name, email, and password.
+- FXML page to allow users to sign up
+- Allow users to create an account by providing their username and password
+
+## Feature 5 - Settings Page - Jae
+- Settings page that allows users changes to username, password, Dark/Light Mode
 
 # Check-In 2 Release Notes
-## Feature 5 - Account Database - Dominic
+## Feature 6 - Account Database - Dominic
 - Users can sign up or log in to their created accounts
 - User information (username, password) stored on a local SQL database
 - Users can sign out on settings page
 
-## Feature 6 - Login Page - Jae
+## Feature 7 - Login Page - Jae
 - FXML page to allow users to log in to their accounts
 - Users with no account can click link to signup page
 
-## Feature 7 - Recent Search History - Dominic
+## Feature 8 - Recent Search History - Dominic
 - Once the user chooses a part, the search history should show recently searched parts 
 - Search history shown on bottom of search page
 
+## Feature 9 - Dark mode/Light mode - Jae
+- In settings page, user can enable dark mode and light mode 
 
 # References
 https://www.youtube.com/watch?v=yw7B85174JQ
