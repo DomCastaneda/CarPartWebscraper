@@ -1,9 +1,3 @@
-/*
-* Copyright (C) Dominic Castaneda - All Rights Reserved
-* Unauthorized copying of this file, via any medium is strictly prohibited 
-* Proprietary and confidential
-* Written by Dominic Castaneda <dcastaneda2828@gmail.com>, November 2021
-*/
 package turboparts;
 
 import java.io.IOException;
