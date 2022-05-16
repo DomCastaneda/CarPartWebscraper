@@ -33,7 +33,7 @@ public class DBUtils
         Parent root = null;
         
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/turboparts?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "toor");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafx-accounts?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "toor");
             psCheckUserExists = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
             psCheckUserExists.setString(1, username);
             resultSet = psCheckUserExists.executeQuery();
@@ -106,7 +106,7 @@ public class DBUtils
         Parent root = null;
         
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/turboparts?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "toor");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafx-accounts?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "toor");
             preparedStatement = connection.prepareStatement("SELECT password FROM users WHERE username = ?");
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();
