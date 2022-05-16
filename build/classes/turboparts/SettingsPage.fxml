@@ -148,7 +148,7 @@ but if we exclude it, we can't run the project-->
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Text>
-      <ComboBox layoutX="670.0" layoutY="451.0" prefWidth="150.0">
+      <ComboBox fx:id="button" layoutX="670.0" layoutY="451.0" prefWidth="150.0">
          <padding>
             <Insets left="45.0" />
          </padding>
