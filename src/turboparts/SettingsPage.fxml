@@ -42,13 +42,13 @@ but if we exclude it, we can't run the project-->
             </Label>
          </children>
       </HBox>
-      <VBox layoutY="119.0" prefHeight="565.0" prefWidth="199.0" styleClass="secondary-color" stylesheets="@style.css">
+      <VBox layoutY="119.0" prefHeight="564.0" prefWidth="199.0" styleClass="secondary-color" stylesheets="@style.css">
          <children>
             <HBox alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="199.0">
                <children>
                   <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgSearch.png" />
+                        <Image url="@../../../imgSearch.png" />
                      </image>
                   </ImageView>
                   <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="84.0" prefWidth="146.0" textAlignment="RIGHT" textFill="WHITE">
@@ -68,10 +68,10 @@ but if we exclude it, we can't run the project-->
                <children>
                   <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgSetting.png" />
+                        <Image url="@../../../imgSetting.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" onAction="#switchToSetting" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
                      <padding>
                         <Insets left="15.0" />
                      </padding>
@@ -88,10 +88,10 @@ but if we exclude it, we can't run the project-->
                <children>
                   <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgProfile.png" />
+                        <Image url="@../../../imgProfile.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="147.0" textAlignment="CENTER" textFill="WHITE">
                      <padding>
                         <Insets left="15.0" />
                      </padding>
@@ -133,7 +133,7 @@ but if we exclude it, we can't run the project-->
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Text>
-      <Button fx:id="confirm" layoutX="538.0" layoutY="352.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="106.0" text="Confirm">
+      <Button fx:id="confirm" layoutX="518.0" layoutY="376.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="146.0" text="Confirm">
          <font>
             <Font name="SansSerif Regular" size="20.0" />
          </font>
@@ -143,6 +143,6 @@ but if we exclude it, we can't run the project-->
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Text>
-      <AnchorPane fx:id="mainPane" layoutX="662.0" layoutY="465.0" prefHeight="200.0" prefWidth="227.0" />
+      <AnchorPane fx:id="mainPane" layoutX="710.0" layoutY="453.0" prefHeight="92.0" prefWidth="147.0" />
     </children>
 </AnchorPane>
